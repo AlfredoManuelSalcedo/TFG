@@ -68,3 +68,19 @@
     height: 100vh;
     background: linear-gradient(to bottom, white, rgb(177, 227, 247));
 }
+
+.login-enlace{
+    font-size: small;
+    color: white;
+}
+
+.boton-login:disabled{
+    border:solid 1px #666151fd; 
+    background-color:#c9b393;
+    color: rgba(90, 85, 85, 0.644);
+}
+
+.login-advertencia{
+    font-size: 12px;
+    color: rgb(238, 255, 0);
+}
