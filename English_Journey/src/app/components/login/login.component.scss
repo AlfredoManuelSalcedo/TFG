@@ -1,5 +1,5 @@
 .form-login{
-    background-color: #4287a7;
+    background-color: #1d7ca8;
     width: 300px;
     height: auto;
     min-height: 300px;
@@ -8,6 +8,7 @@
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    box-shadow: -2px 12px 18px 4px rgba(0,0,0,0.75);
 }
 
 .inputs-login{
@@ -60,4 +61,10 @@
 .boton-login:hover{
     background-color:#fab356; 
     cursor: pointer;
+}
+
+.body-container{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, white, rgb(177, 227, 247));
 }
