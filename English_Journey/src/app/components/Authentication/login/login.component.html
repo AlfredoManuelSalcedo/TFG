@@ -1,0 +1,18 @@
+    <div class="form-login">
+        <div class="titulo-login">
+            <p>Bienvenido</p>
+        </div>
+        <div class="subtitulo-login">
+            <p>Inicio de sesión:</p>
+        </div>
+        <form [formGroup]="loginform" (ngSubmit)="onSubmit()">
+            <label>Email:</label> <input type="email" formControlName="mail" class="inputs-login">
+            @if(loginform.controls.mail.invalid && loginform.controls.mail.touched){
+                <label  class="login-advertencia">Email invalido o vacio</label>
+            }<br><br>
+            <label>Contraseña:</label><input type="password" formControlName="password" class="inputs-login"><br><br>
+            <button type="submit" class="boton-login" [disabled]="!loginform.valid" routerLink="home">ACCEDER</button><br>
+        </form>
+        
+        <a href="" class="login-enlace" routerLink="/auth/register">Registrese</a>
+    </div>

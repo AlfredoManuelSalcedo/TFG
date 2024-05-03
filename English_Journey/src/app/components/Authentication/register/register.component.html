@@ -1,0 +1,22 @@
+
+    <div class="form-login">
+        <div class="titulo-login">
+            <p>Registro</p>
+        </div>
+        <form [formGroup]="registerform">
+            Nombre: <input type="nombre" formControlName="nombre" class="inputs-login">
+            @if(registerform.controls.nombre.invalid && registerform.controls.nombre.touched){
+                <label  class="login-advertencia">Campo requerido</label>
+            }<br><br>
+            Email: <input type="email" formControlName="mail" class="inputs-login">
+            @if(registerform.controls.mail.invalid && registerform.controls.mail.touched){
+                <label  class="login-advertencia">Email invalido o vacio</label>
+            }<br><br>
+            Contraseña:<input type="password" formControlName="password" class="inputs-login">
+            @if(registerform.controls.password.invalid && registerform.controls.password.touched){
+                <label  class="login-advertencia">Campo requerido</label>
+            }<br><br>
+            <button type="submit" class="boton-login" [disabled]="!registerform.valid" routerLink="home">REGISTRARSE</button>
+            <br>
+        </form>
+    </div>

@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { HeaderLoginComponent } from '../header-login/header-login.component';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [HeaderLoginComponent, ReactiveFormsModule],
+  imports: [HeaderLoginComponent, ReactiveFormsModule, RouterLink, RouterOutlet],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
@@ -19,4 +20,6 @@ export class LoginComponent {
  onSubmit(){
   console.log("hola")
  }
+
+ 
 }
