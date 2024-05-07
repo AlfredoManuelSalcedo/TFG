@@ -1,12 +1,14 @@
 .header-login-div{
     width: 100%;
-    background-color: rgb(255, 255, 255);
-    height: 50px;
+    background-color: #1d7ca8;
+    min-height: 10%;
     text-align: center;
-    font-size: 49px;
-    font-weight: bold;
-    color: #4287a7;
-    border-bottom: solid #0d4c69 ;
-    margin-bottom: 30px;
+    padding-top: 10px;
+}
 
+.header-text{
+    color: white;
+    font-weight: bold;
+    font-size: 3vw;
+    margin-top: 10px;
 }

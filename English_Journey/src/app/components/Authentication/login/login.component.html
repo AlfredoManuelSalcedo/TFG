@@ -4,15 +4,34 @@
         </div>
         <div class="subtitulo-login">
             <p>Inicio de sesión:</p>
-        </div>
-        <form [formGroup]="loginform" (ngSubmit)="onSubmit()">
+        </div><br>
+        <!-- <form [formGroup]="loginform" (ngSubmit)="onSubmit()">
             <label>Email:</label> <input type="email" formControlName="mail" class="inputs-login">
             @if(loginform.controls.mail.invalid && loginform.controls.mail.touched){
                 <label  class="login-advertencia">Email invalido o vacio</label>
             }<br><br>
             <label>Contraseña:</label><input type="password" formControlName="password" class="inputs-login"><br><br>
             <button type="submit" class="boton-login" [disabled]="!loginform.valid" routerLink="home">ACCEDER</button><br>
+        </form> -->
+        <form>
+            <mat-form-field class="input-width">
+                <mat-label>Email</mat-label>
+                <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"placeholder="Ex. pat@example.com" class="matInputSmall">
+                @if (emailFormControl.hasError('email')) {
+                    <mat-error>Porfavor introduce un email válido</mat-error>
+                  }
+                @if (emailFormControl.hasError('required')) {
+                    <mat-error>El correo es <strong>obligatorio</strong></mat-error>
+                }
+            </mat-form-field>
+            <mat-form-field class="input-width" >
+                <mat-label>Contraseña</mat-label>
+                <input type="password" matInput [formControl]="passwordFormControl" [errorStateMatcher]="matcher"placeholder="Su contraseña..." class="matInputSmall">
+                @if (emailFormControl.hasError('required')) {
+                    <mat-error>La contraseña es <strong>obligatoria</strong></mat-error>
+                }
+            </mat-form-field>
+             <button type="submit" class="boton-login" routerLink="home" [disabled]="!emailFormControl.valid || !passwordFormControl.valid">ACCEDER</button><br>
         </form>
-        
         <a href="" class="login-enlace" routerLink="/auth/register">Registrese</a>
     </div>
