@@ -1,12 +1,14 @@
 import {Component} from '@angular/core';
-import { HomeBarComponent } from '../home-bar/home-bar.component';
-import { HomeContainerComponent } from '../home-container/home-container.component';
+import {MatIconModule} from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import {MatButtonModule} from '@angular/material/button';
 import { RouterOutlet } from '@angular/router';
-
 @Component({
   selector: 'app-home-screen',
   standalone: true,
-  imports: [HomeBarComponent,RouterOutlet,HomeContainerComponent],
+  imports: [MatToolbarModule, MatIconModule,MatSidenavModule,MatListModule,MatButtonModule,RouterOutlet],
   templateUrl: './home-screen.component.html',
   styleUrl: './home-screen.component.scss'
 })
