@@ -3,47 +3,34 @@
         <div class="titulo-login">
             <p>Registro</p>
         </div><br>
-        <!-- <form [formGroup]="registerform">
-            Nombre: <input type="nombre" formControlName="nombre" class="inputs-login">
-            @if(registerform.controls.nombre.invalid && registerform.controls.nombre.touched){
-                <label  class="login-advertencia">Campo requerido</label>
-            }<br><br>
-            Email: <input type="email" formControlName="mail" class="inputs-login">
-            @if(registerform.controls.mail.invalid && registerform.controls.mail.touched){
-                <label  class="login-advertencia">Email invalido o vacio</label>
-            }<br><br>
-            Contraseña:<input type="password" formControlName="password" class="inputs-login">
-            @if(registerform.controls.password.invalid && registerform.controls.password.touched){
-                <label  class="login-advertencia">Campo requerido</label>
-            }<br><br>
-            <button type="submit" class="boton-login" [disabled]="!registerform.valid" routerLink="home">REGISTRARSE</button>
-            <br>
-        </form> -->
-        <form>
-            <mat-form-field class="input-width" >
+        <form (submit)="registro()" method="post" [formGroup]="registerform">
+            <mat-form-field class="input-width">
                 <mat-label>Nombre</mat-label>
-                <input type="text" matInput [formControl]="nameFormControl" [errorStateMatcher]="matcher"placeholder="Su nombre..." class="matInputSmall">
-                @if (nameFormControl.hasError('required')) {
+                <input type="text" matInput [formControl]="registerform.controls.nombre" [errorStateMatcher]="matcher"placeholder="Su nombre..." class="matInputSmall">
+                @if (registerform.controls.nombre.hasError('required')) {
                     <mat-error>El nombre es <strong>obligatorio</strong></mat-error>
                 }
             </mat-form-field>
             <mat-form-field class="input-width">
                 <mat-label>Email</mat-label>
-                <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"placeholder="Ex. pat@example.com" class="matInputSmall">
-                @if (emailFormControl.hasError('email')) {
+                <input type="email" matInput [formControl]="registerform.controls.mail" [errorStateMatcher]="matcher"placeholder="Ex. pat@example.com" class="matInputSmall">
+                @if (registerform.controls.mail.hasError('email')) {
                     <mat-error>Porfavor introduce un email válido</mat-error>
                   }
-                @if (emailFormControl.hasError('required')) {
+                @if (registerform.controls.password.hasError('required')) {
                     <mat-error>El correo es <strong>obligatorio</strong></mat-error>
                 }
             </mat-form-field>
-            <mat-form-field class="input-width" >
+            <mat-form-field class="input-width">
                 <mat-label>Contraseña</mat-label>
-                <input type="password" matInput [formControl]="passwordFormControl" [errorStateMatcher]="matcher"placeholder="Su contraseña..." class="matInputSmall">
-                @if (passwordFormControl.hasError('required')) {
-                    <mat-error>La contraseña es <strong>obligatoria</strong></mat-error>
+                <input type="password" matInput [formControl]="registerform.controls.password"  [errorStateMatcher]="matcher" placeholder="Ingrese su Contraseña...">
+                @if(passwordFormControl.hasError('password')){
+                    <mat-error>La contraseña no es válida</mat-error>
+                }
+                @if(passwordFormControl.hasError('required')){
+                    <mat-error>La contraseña es <strong>requerida</strong></mat-error>
                 }
             </mat-form-field>
-             <button type="submit" class="boton-login" routerLink="home" [disabled]="!emailFormControl.valid || !passwordFormControl.valid">ACCEDER</button><br>
+            <button (click)="openDialog()" class="boton-login" [disabled]="!registerform.valid" >ACCEDER</button><br>
         </form>
     </div>
