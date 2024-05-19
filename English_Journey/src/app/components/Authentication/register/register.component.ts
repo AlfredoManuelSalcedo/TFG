@@ -8,7 +8,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import { RegisterModalComponent } from '../../modals/register-modal/register-modal.component';
 import { ConexionService } from '../../../services/API/conexion.service';
-
+import { UserExistModalComponent } from '../../modals/user-exist-modal/user-exist-modal.component';
+import { ErrorRegisterModalComponent } from '../../modals/error-register-modal/error-register-modal.component';
 @Component({
   selector: 'app-register',
   standalone: true,
@@ -18,17 +19,22 @@ import { ConexionService } from '../../../services/API/conexion.service';
 })
 export class RegisterComponent implements OnInit{
   datos: any[]=[];
+  query = "SELECT * FROM usuarios";
+  querys = "SELECT * FROM usuarios WHERE user_id =1";
   constructor(public dialog: MatDialog, private conexionsql: ConexionService){}
 
   ngOnInit(): void {
-    this.conexionsql.getDatos().subscribe(data=>{
-      this.datos=data;
-    })
-    console.log(this.datos)
+    
   }
-  
-  openDialog(): void {
-    this.dialog.open(RegisterModalComponent, {  });
+  openDialog(status:number){
+    if(status==201){
+      this.dialog.open(RegisterModalComponent, {  });
+    }else if(status==200){
+      this.dialog.open(UserExistModalComponent, {  });
+    }else{
+      this.dialog.open(ErrorRegisterModalComponent, {  });
+    }
+
   }
 
   registerform = new FormGroup({
@@ -42,8 +48,15 @@ export class RegisterComponent implements OnInit{
  nameFormControl = new FormControl('', Validators.required )
 
  matcher = new MyErrorStateMatcher();
+
  registro(){
-  console.log("hola")
+  const userData = this.registerform.value;
+  this.conexionsql.getPruebaMail(userData).subscribe(data=>{
+    this.datos=data;
+    console.log(this.datos);
+    console.log(data.status);
+    this.openDialog(data.status);
+  })
  }
 }
 export class MyErrorStateMatcher implements ErrorStateMatcher {

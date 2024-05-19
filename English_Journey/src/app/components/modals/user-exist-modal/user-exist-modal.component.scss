@@ -1,0 +1,31 @@
+.dialogRegister{
+    width: 250px;
+    height: 250px;
+    background-color: rgb(255, 255, 255);
+    border: 5px solid rgb(34, 126, 247);
+    text-align: center;
+}
+.title{
+    color: rgb(34, 126, 247);
+    border-bottom: 1px solid rgb(34, 126, 247);
+}
+
+.boton-vuelta{
+    text-decoration:none; 
+    text-align:center; 
+    padding:11px 32px; 
+    border:solid 1px #216cf8; 
+    font-weight:bold; 
+    color:#000000; 
+    background-color:#538df8; 
+    border-radius: 10px;
+    margin-top: 10px;
+   }
+   .boton-vuelta:hover{
+    border:solid 1px #216cf8; 
+    background-color:#8cb1f5;
+    cursor: pointer;
+   }
+   .contenido{
+    color: #000000;
+   }
