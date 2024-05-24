@@ -19,8 +19,6 @@ import { ErrorRegisterModalComponent } from '../../modals/error-register-modal/e
 })
 export class RegisterComponent implements OnInit{
   datos: any[]=[];
-  query = "SELECT * FROM usuarios";
-  querys = "SELECT * FROM usuarios WHERE user_id =1";
   constructor(public dialog: MatDialog, private conexionsql: ConexionService){}
 
   ngOnInit(): void {
@@ -51,10 +49,8 @@ export class RegisterComponent implements OnInit{
 
  registro(){
   const userData = this.registerform.value;
-  this.conexionsql.getPruebaMail(userData).subscribe(data=>{
+  this.conexionsql.getRegister(userData).subscribe(data=>{
     this.datos=data;
-    console.log(this.datos);
-    console.log(data.status);
     this.openDialog(data.status);
   })
  }

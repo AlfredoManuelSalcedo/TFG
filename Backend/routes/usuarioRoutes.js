@@ -62,4 +62,24 @@ router.get('/register/:datos', (req, res) => {
         res.status(200).json({ success: true, message: 'Usuario encontrado', data: results[0],status:200 });
     });
 });
+
+router.get('/login/:datos', (req, res) => {
+    const datos = JSON.parse(decodeURIComponent(req.params.datos));
+    const mail = datos.mail;
+    const passw = datos.password;
+    const query = 'SELECT * FROM usuarios WHERE correo = ? AND contraseña = ?';
+    connection.query(query, [mail,passw], (err, results) => {
+        if (err) {
+            console.error('Error ejecutando la consulta:', err);
+            res.status(500).json({ success: false, message: 'Error ejecutando la consulta', error: err, status:500 });
+            return;
+        }
+        if (results.length === 0) {
+            console.error('Error ejecutando la consulta:', err);
+            res.status(500).json({ success: false, message: 'Error consulta nula', error: err, status:500 });
+            return;
+        }
+        res.status(200).json({ success: true, message: 'Usuario encontrado', data: results[0],status:200 });
+    });
+});
 module.exports = router;
