@@ -8,6 +8,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { ConexionService } from '../../../services/API/conexion.service';
 import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import { ErrorLoginComponent } from '../../modals/error-login/error-login.component';
+import { UserDataService } from '../../../services/user-data.service';
 
 @Component({
   selector: 'app-login',
@@ -17,21 +18,20 @@ import { ErrorLoginComponent } from '../../modals/error-login/error-login.compon
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
-datos: any[]=[];
- constructor(public dialog: MatDialog,private conexionsql: ConexionService, private router: Router){}
+ constructor(public dialog: MatDialog,private conexionsql: ConexionService, private router: Router, private userDataService: UserDataService){}
  loginform = new FormGroup({
   mail : new FormControl('',[Validators.email, Validators.required]),
   password : new FormControl('',Validators.required)
  })
 
- openDialog(status:number){
-  if(status==500){
-    console.log("error 500")
-    this.dialog.open(ErrorLoginComponent, {  });
-  }if(status==200){
-    this.router.navigate(["/EnglishJourney/home"])
+ openDialog(status: number) {
+  if (status == 500) {
+    console.log("error 500");
+    this.dialog.open(ErrorLoginComponent, {});
+  } if (status == 200) {
+    this.router.navigate(["/EnglishJourney/home"]);
   }
-}
+} 
 
  emailFormControl = new FormControl('', [Validators.required, Validators.email]);
  passwordFormControl = new FormControl('', Validators.required);
@@ -41,8 +41,8 @@ datos: any[]=[];
   const userData = this.loginform.value;
   this.conexionsql.getLogin(userData).subscribe(
     data => {
-      this.datos = data;
       console.log(data);
+      this.userDataService.setUserData(data);
       this.openDialog(data.status);
     },
     error => {

@@ -67,7 +67,7 @@ router.get('/login/:datos', (req, res) => {
     const datos = JSON.parse(decodeURIComponent(req.params.datos));
     const mail = datos.mail;
     const passw = datos.password;
-    const query = 'SELECT * FROM usuarios WHERE correo = ? AND contraseña = ?';
+    const query = 'SELECT user_id,nombre,correo FROM usuarios WHERE correo = ? AND contraseña = ?';
     connection.query(query, [mail,passw], (err, results) => {
         if (err) {
             console.error('Error ejecutando la consulta:', err);
