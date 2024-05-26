@@ -82,4 +82,34 @@ router.get('/login/:datos', (req, res) => {
         res.status(200).json({ success: true, message: 'Usuario encontrado', data: results[0],status:200 });
     });
 });
+
+router.get('/lessonsTypes', (req, res) => {
+    const query = 'select distinct tipo_curso from cursos';
+    connection.query(query, (err, results) => {
+        if (err) {
+            console.error('Error ejecutando la consulta:', err);
+            res.status(500).send(err);
+            return;
+        }
+        res.status(200).json(results);
+    });
+});
+
+router.get('/lessonsByType/:datos', (req, res) => {
+    const datos = JSON.parse(decodeURIComponent(req.params.datos));
+    const query = 'select nombre_curso from cursos where tipo_curso = ?';
+    connection.query(query, [datos], (err, results) => {
+        if (err) {
+            console.error('Error ejecutando la consulta:', err);
+            res.status(500).json({ success: false, message: 'Error ejecutando la consulta', error: err, status:500 });
+            return;
+        }
+        if (results.length === 0) {
+            console.error('Error ejecutando la consulta:', err);
+            res.status(500).json({ success: false, message: 'Error consulta nula', error: err, status:500 });
+            return;
+        }
+        res.status(200).json(results);
+    });
+});
 module.exports = router;

@@ -29,4 +29,12 @@ export class ConexionService {
   private handleError(error: HttpErrorResponse) {
     return throwError(error);
   }
+
+  getLessonsTypes(): Observable<any[]>{
+    return this.http.get<any[]>(`${this.api_url}/lessonsTypes`);
+  }
+
+  getLessonsByType(datos: String):Observable<any[]>{
+    return this.http.get<any>(`${this.api_url}/lessonsByType/${encodeURIComponent(JSON.stringify(datos))}`);
+  }
 }
