@@ -1,12 +1,69 @@
 .principal-container {
     margin: 3% 6% 3% 6%;
-    background-color: rgb(199, 234, 255);
     border-radius: 25px;
     padding: 1%;
+    text-align: center;
 }
 .lesson-container{
     margin: 3% 6% 3% 6%;
     background-color: rgb(250, 199, 255);
     border-radius: 25px;
     padding: 1%;
+    display: flex;
 }
+
+.nombre-cursos{
+    margin: 0% 0.5% 0% 0.5%;
+    background-color: rgb(171, 173, 255);
+    border-radius: 25px;
+    padding: 1%;
+    width: 200rem;
+    height: 5rem;
+    font-size: large;
+    font-weight: bold;
+    display: grid;
+    align-items: center;
+    transition: transform 0.3s ease, flex-grow 0.3s ease;
+    flex-grow: 1;
+    transform: scale(1);
+    background-size: cover;
+    background-position: center;
+}
+
+.title-class-container{
+    text-align: center;
+    border-radius: 25px;
+    border: 3px solid #fafafa;
+    background-color: rgb(199, 234, 255);
+}
+  
+  .nombre-cursos.active {
+    flex-grow: 2;
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+  
+  .lesson-container {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .title-class-container {
+    margin-bottom: 20px;
+  }
+
+  .color1 {
+    background-color: #ffcccc; // Rojo claro
+  }
+  
+  .color2 {
+    background-color: #ccffcc; // Verde claro
+  }
+  
+  .color3 {
+    background-color: #ccccff; // Azul claro
+  }
+  
+  .color4 {
+    background-color: #ffffcc; // Amarillo claro
+  }

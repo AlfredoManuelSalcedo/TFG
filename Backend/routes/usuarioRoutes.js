@@ -97,7 +97,7 @@ router.get('/lessonsTypes', (req, res) => {
 
 router.get('/lessonsByType/:datos', (req, res) => {
     const datos = JSON.parse(decodeURIComponent(req.params.datos));
-    const query = 'select nombre_curso from cursos where tipo_curso = ?';
+    const query = 'select nombre_curso,img from cursos where tipo_curso = ?';
     connection.query(query, [datos], (err, results) => {
         if (err) {
             console.error('Error ejecutando la consulta:', err);

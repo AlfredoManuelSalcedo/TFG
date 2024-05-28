@@ -1,17 +1,21 @@
 <div class="principal-container">
     <div class="title-container">
-        <h1 [innerHTML]="'Bienvenido '+this.nombre"></h1>
+      <h1 [innerHTML]="'Bienvenido '+this.nombre"></h1>
     </div>
-    @for (tipo of tipos; track tipo){
-        <div class="lesson-container">
-            @if(tipo.tipo_curso){
-                    <h2>{{ tipo.tipo_curso.toUpperCase() }}</h2>
-            }   
-            @for(leccion of tipo.lecciones; track leccion){
-                <div class="nombre-curso">
-                    {{ leccion.nombre_curso }}
-                </div>
-            }       
+    <div *ngFor="let tipo of tipos; let i = index; trackBy: trackByFn" [ngClass]="getColorClass(i)" class="title-class-container">
+      <h2 *ngIf="tipo.tipo_curso">{{ tipo.tipo_curso.toUpperCase() }}</h2>
+      <div class="lesson-container">
+        <div
+          *ngFor="let leccion of tipo.lecciones; trackBy: trackByFn"
+          class="nombre-cursos"
+          [ngClass]="{ 'active': activeLesson === leccion }"
+          [ngStyle]="{'background-image': 'url(' + getAssetPath(leccion.img) + ')'}"
+          [routerLink]="getRouterLink(leccion.img)"
+          (mouseover)="setActiveLesson(leccion)"
+          (mouseleave)="clearActiveLesson()"
+        >
+          <label>{{ leccion.nombre_curso }}</label>
         </div>
-    }
-</div>
+      </div>
+    </div>
+  </div>
