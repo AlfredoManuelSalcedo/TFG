@@ -6,13 +6,13 @@
 }
 .lesson-container{
     margin: 3% 6% 3% 6%;
-    background-color: rgb(250, 199, 255);
     border-radius: 25px;
     padding: 1%;
     display: flex;
 }
 
 .nombre-cursos{
+    box-shadow: 2px 10px 51px -21px rgba(0,0,0,0.75);
     margin: 0% 0.5% 0% 0.5%;
     background-color: rgb(171, 173, 255);
     border-radius: 25px;
@@ -30,6 +30,10 @@
     background-position: center;
 }
 
+.nombre-cursos:hover{
+  cursor: pointer;
+}
+
 .title-class-container{
     text-align: center;
     border-radius: 25px;
@@ -40,7 +44,6 @@
   .nombre-cursos.active {
     flex-grow: 2;
     transform: scale(1.1);
-    cursor: pointer;
   }
   
   .lesson-container {

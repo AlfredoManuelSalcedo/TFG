@@ -4,13 +4,13 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { UserDataService } from '../../../services/user-data.service';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-home-screen',
   standalone: true,
-  imports: [MatToolbarModule, MatIconModule,MatSidenavModule,MatListModule,MatButtonModule,RouterOutlet],
+  imports: [MatToolbarModule, MatIconModule,MatSidenavModule,MatListModule,MatButtonModule,RouterOutlet,RouterLink],
   templateUrl: './home-screen.component.html',
   styleUrl: './home-screen.component.scss'
 })

@@ -7,6 +7,9 @@ import { HomeBarComponent } from './components/Home/home-bar/home-bar.component'
 import { Component } from '@angular/core';
 import { HomeContainerComponent } from './components/Home/home-container/home-container.component';
 import { PresentComponent } from './components/lessons/present/present.component';
+import { PastComponent } from './components/lessons/past/past.component';
+import { FutureComponent } from './components/lessons/future/future.component';
+import { ConditionalsComponent } from './components/lessons/conditionals/conditionals.component';
 
 export const routes: Routes = [
     {path: "auth",
@@ -19,6 +22,9 @@ export const routes: Routes = [
     {path:'', redirectTo:"auth/login", pathMatch:"full" },
     {path: "EnglishJourney",
     children:[
+        {path:"g_conditionals", component:ConditionalsComponent},
+        {path:"g_future", component:FutureComponent},
+        {path:"g_past", component:PastComponent},
         {path:"g_present", component:PresentComponent},
         {path:"home", component:HomeContainerComponent},
         {path: '', redirectTo:"/home", pathMatch:"full"}
