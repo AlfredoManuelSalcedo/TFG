@@ -1,1 +1,129 @@
-<p>future works!</p>
+<mat-stepper labelPosition="bottom" linear="false"> 
+    <form action="">
+    <mat-step label="Pregunta 1">
+        <div class="body-container">
+        <div class="container">
+            <div class="test-container">
+                <div class="test-question">
+                    <label>Elije la opción correcta "Future Simple"</label><br><br>
+                    <label>He _____ arrive on time.</label>
+                </div>
+                <mat-radio-group [(ngModel)]="respuestaSeleccionadas[0]" name="quest_1">
+                    <mat-radio-button value="1_resp_1">will</mat-radio-button>
+                    <mat-radio-button value="1_resp_2">is</mat-radio-button>
+                    <mat-radio-button value="1_resp_3">not</mat-radio-button>
+                    <mat-radio-button value="1_resp_4">willing</mat-radio-button>
+                </mat-radio-group>
+            </div>
+            <div class="first-buttons-container">
+                <button matStepperNext>Siguiente</button>
+            </div>
+        </div>
+    </div>
+    </mat-step>
+
+    <mat-step label="Pregunta 2">
+        <div class="body-container">
+            <div class="container">
+                <div class="test-container">
+                    <div class="test-question">
+                        <label>Cual de estas frases usa el "Future" correctamente</label>
+                    </div>
+                    <mat-radio-group [(ngModel)]="respuestaSeleccionadas[1]" name="quest_2">
+                        <mat-radio-button value="2_resp_1">Willing your folks leaving before Tuesday?</mat-radio-button>
+                        <mat-radio-button value="2_resp_2">Willing your folks leave before Tuesday?</mat-radio-button>
+                        <mat-radio-button value="2_resp_3">Will your folks leave before Tuesday?</mat-radio-button>
+                        <mat-radio-button value="2_resp_4">Will your folks leaving before Tuesday?</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div class="buttons-container">
+                    <button matStepperPrevious>Anterior</button>
+                    <button matStepperNext>Siguiente</button>
+                </div>
+            </div>
+        </div>
+    </mat-step>
+
+    <mat-step label="Pregunta 3"> 
+        <div class="body-container">
+            <div class="container">
+                <div class="test-container">
+                    <div class="test-question">
+                        <label>Selecciona la opción correcta</label><br><br>
+                        <label> I don't ________ go swimming today.</label>
+                    </div>
+                    <mat-radio-group [(ngModel)]="respuestaSeleccionadas[2]" name="quest_3">
+                        <mat-radio-button value="3_resp_1">think I</mat-radio-button>
+                        <mat-radio-button value="3_resp_2">think I'll</mat-radio-button>
+                        <mat-radio-button value="3_resp_3">think i am</mat-radio-button>
+                        <mat-radio-button value="3_resp_4">thinking</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div class="buttons-container">
+                    <button matStepperPrevious>Anterior</button>
+                    <button matStepperNext>Siguiente</button>
+                </div>
+            </div>
+        </div>
+    </mat-step>
+
+    <mat-step label="Pregunta 4">
+        <div class="body-container">
+            <div class="container">
+                <div class="test-container">
+                    <div class="test-question">
+                        <label>Will you _____ at the rehearsal on Saturday?</label>
+                    </div>
+                    <mat-radio-group [(ngModel)]="respuestaSeleccionadas[3]" name="quest_4">
+                        <mat-radio-button value="4_resp_1">going</mat-radio-button>
+                        <mat-radio-button value="4_resp_2">goed</mat-radio-button>
+                        <mat-radio-button value="4_resp_3">went</mat-radio-button>
+                        <mat-radio-button value="4_resp_4">go</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div class="buttons-container">
+                    <button matStepperPrevious>Anterior</button>
+                    <button matStepperNext>Siguiente</button>
+                </div>
+            </div>
+        </div>
+    </mat-step>
+
+    <mat-step label="Pregunta 5">
+        <div class="body-container">
+            <div class="container">
+                <div class="test-container">
+                    <div class="test-question">
+                        <label>Rellena el hueco "Future"</label><br><br>
+                        <label>I'm going to the grocery store. I think _____ buy a turkey.</label>
+                    </div>
+                    <mat-radio-group [(ngModel)]="respuestaSeleccionadas[4]" name="quest_5">
+                        <mat-radio-button value="5_resp_1">I'll</mat-radio-button>
+                        <mat-radio-button value="5_resp_2">I'd</mat-radio-button>
+                        <mat-radio-button value="5_resp_3">I've</mat-radio-button>
+                        <mat-radio-button value="5_resp_4">I'ved</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div class="buttons-container">
+                    <button matStepperPrevious>Anterior</button>
+                    <button matStepperNext (click)="this.resultados()">Resultados</button>
+                </div>
+            </div>
+        </div>
+    </mat-step>
+    <mat-step label="Resultados">
+        <div class="body-container">
+            <div class="container-final">
+                <mat-progress-spinner mode="determinate" [value]="valueSpinner" diameter="150">
+                </mat-progress-spinner>
+                <p class="percentage">{{ valueSpinner.toPrecision(3) }}%</p>   
+                <p class="score">{{ this.correctas() }} de {{ respuestasCorrectas.length }}</p>
+                <p class="message">{{ mensaje}}</p>
+            </div>
+        </div>
+        <div class="buttons-container">
+            <button routerLink="/EnglishJourney/home">Home</button>
+        </div>
+    </mat-step>
+</form>
+</mat-stepper>

@@ -4,14 +4,15 @@ import { MatRadioModule } from '@angular/material/radio';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
 @Component({
-  selector: 'app-future',
+  selector: 'app-rintermediate',
   standalone: true,
   imports: [MatStepperModule, MatRadioModule, RouterLink, FormsModule, MatProgressSpinnerModule],
-  templateUrl: './future.component.html',
-  styleUrl: './future.component.scss'
+  templateUrl: './rintermediate.component.html',
+  styleUrl: './rintermediate.component.scss'
 })
-export class FutureComponent {
+export class RIntermediateComponent {
   respuestaSeleccionadas: string[] = new Array(5).fill('');
   respuestasCorrectas: string[] = ['1_resp_1', '2_resp_3', '3_resp_2', '4_resp_4', '5_resp_1'];
   valueSpinner: number = 0;

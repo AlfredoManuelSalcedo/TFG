@@ -1,0 +1,220 @@
+<mat-stepper labelPosition="bottom" linear="false"> 
+    <form action="">
+        <mat-step label="texto 1">
+            <div class="body-container">
+            <div class="container">
+                <div class="test-container">
+                    <div class="test-question">
+                        "After finishing my undergraduate studies in biology, I embarked on a journey to explore the depths of marine life.<br>
+                         Equipped with my scuba gear, I dove into the azure waters of the Caribbean.<br>
+                         Among the coral reefs, I encountered vibrant ecosystems teeming with diverse species.<br>
+                         It was a profound experience that fueled my passion for marine conservation."
+                    </div>
+                </div>
+                <div class="first-buttons-container">
+                    <button matStepperNext>Siguiente</button>
+                </div>
+            </div>
+        </div>
+        </mat-step>
+    <mat-step label="Pregunta 1">
+        <div class="body-container">
+        <div class="container">
+            <div class="test-container">
+                <div class="test-question">
+                    <label>What field did the person study in their undergraduate studies?</label>
+                </div>
+                <mat-radio-group [(ngModel)]="respuestaSeleccionadas[0]" name="quest_1">
+                    <mat-radio-button value="1_resp_1">Physics</mat-radio-button>
+                    <mat-radio-button value="1_resp_2">Biology</mat-radio-button>
+                    <mat-radio-button value="1_resp_3">Chemistry</mat-radio-button>
+                    <mat-radio-button value="1_resp_4">Mathematics</mat-radio-button>
+                </mat-radio-group>
+            </div>
+            <div class="buttons-container">
+                <button matStepperPrevious>Anterior</button>
+                <button matStepperNext>Siguiente</button>
+            </div>
+        </div>
+    </div>
+    </mat-step>
+
+    <mat-step label="texto 2">
+        <div class="body-container">
+        <div class="container">
+            <div class="test-container">
+                <div class="test-question">
+                    "Having honed my culinary skills through years of apprenticeship under renowned chefs, I decided to open my own restaurant.<br>
+                     With a commitment to excellence in both taste and presentation,<br>
+                      I curated a menu featuring fusion cuisine inspired by my travels around the world.<br>
+                      Guests often praise the unique flavors and elegant plating of my dishes."
+                </div>
+            </div>
+            <div class="buttons-container">
+                <button matStepperPrevious>Anterior</button>
+                <button matStepperNext>Siguiente</button>
+            </div>
+        </div>
+    </div>
+    </mat-step>
+
+    <mat-step label="Pregunta 2">
+        <div class="body-container">
+            <div class="container">
+                <div class="test-container">
+                    <div class="test-question">
+                        <label>What inspired the person's menu at their restaurant?</label>
+                    </div>
+                    <mat-radio-group [(ngModel)]="respuestaSeleccionadas[1]" name="quest_2">
+                        <mat-radio-button value="2_resp_1">Family recipes</mat-radio-button>
+                        <mat-radio-button value="2_resp_2">Travel experiences</mat-radio-button>
+                        <mat-radio-button value="2_resp_3">Cooking shows</mat-radio-button>
+                        <mat-radio-button value="2_resp_4">Cooking books</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div class="buttons-container">
+                    <button matStepperPrevious>Anterior</button>
+                    <button matStepperNext>Siguiente</button>
+                </div>
+            </div>
+        </div>
+    </mat-step>
+
+    <mat-step label="texto 3">
+        <div class="body-container">
+        <div class="container">
+            <div class="test-container">
+                <div class="test-question">
+                    As a seasoned software engineer, I specialize in developing innovative mobile applications.<br>
+                     My latest project involved creating a user-friendly interface for a health and fitness app.<br>
+                     Through meticulous coding and user testing, I ensured seamless functionality and an intuitive user experience.<br>
+                     The app has garnered widespread acclaim for its effectiveness and usability
+                </div>
+            </div>
+            <div class="buttons-container">
+                <button matStepperPrevious>Anterior</button>
+                <button matStepperNext>Siguiente</button>
+            </div>
+        </div>
+    </div>
+    </mat-step>
+    <mat-step label="Pregunta 3"> 
+        <div class="body-container">
+            <div class="container">
+                <div class="test-container">
+                    <div class="test-question">
+                        <label>What is the person's latest project about?</label>
+                    </div>
+                    <mat-radio-group [(ngModel)]="respuestaSeleccionadas[2]" name="quest_3">
+                        <mat-radio-button value="3_resp_1">Gaming</mat-radio-button>
+                        <mat-radio-button value="3_resp_2">Health and fitness</mat-radio-button>
+                        <mat-radio-button value="3_resp_3">Travel</mat-radio-button>
+                        <mat-radio-button value="3_resp_4">Social Media</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div class="buttons-container">
+                    <button matStepperPrevious>Anterior</button>
+                    <button matStepperNext>Siguiente</button>
+                </div>
+            </div>
+        </div>
+    </mat-step>
+
+    <mat-step label="texto 4">
+        <div class="body-container">
+        <div class="container">
+            <div class="test-container">
+                <div class="test-question">
+                    During my tenure as a research analyst at a financial firm,<br>
+                     I conducted in-depth market analysis to identify emerging trends and investment opportunities.<br>
+                     Utilizing advanced statistical models and data visualization techniques,<br>
+                      I provided actionable insights to clients seeking to optimize their investment portfolios. <br>
+                     My rigorous approach to research consistently delivered valuable results.
+
+                </div>
+            </div>
+            <div class="buttons-container">
+                <button matStepperPrevious>Anterior</button>
+                <button matStepperNext>Siguiente</button>
+            </div>
+        </div>
+    </div>
+    </mat-step>
+    <mat-step label="Pregunta 4">
+        <div class="body-container">
+            <div class="container">
+                <div class="test-container">
+                    <div class="test-question">
+                        <label>What did the person provide to clients during their time as a research analyst?</label>
+                    </div>
+                    <mat-radio-group [(ngModel)]="respuestaSeleccionadas[3]" name="quest_4">
+                        <mat-radio-button value="4_resp_1">Marketing strategies</mat-radio-button>
+                        <mat-radio-button value="4_resp_2">Investment advice</mat-radio-button>
+                        <mat-radio-button value="4_resp_3">Product development</mat-radio-button>
+                        <mat-radio-button value="4_resp_4">Customer service</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div class="buttons-container">
+                    <button matStepperPrevious>Anterior</button>
+                    <button matStepperNext>Siguiente</button>
+                </div>
+            </div>
+        </div>
+    </mat-step>
+
+    <mat-step label="texto 5">
+        <div class="body-container">
+        <div class="container">
+            <div class="test-container">
+                <div class="test-question">
+                    "Amidst the bustling streets of New York City, I pursued my dream of becoming a professional actor.<br>
+                     Through auditions and acting classes, I honed my craft and eventually landed roles in off-Broadway productions.<br>
+                      The theatrical community embraced me, and I found fulfillment in bringing characters to life on stage.<br>
+                       It has been a journey filled with challenges and triumphs.
+                </div>
+            </div>
+            <div class="buttons-container">
+                <button matStepperPrevious>Anterior</button>
+                <button matStepperNext>Siguiente</button>
+            </div>
+        </div>
+    </div>
+    </mat-step>
+
+    <mat-step label="Pregunta 5">
+        <div class="body-container">
+            <div class="container">
+                <div class="test-container">
+                    <div class="test-question">
+                        <label>Where did the person pursue their dream of becoming a professional actor?</label><br><br>
+                    </div>
+                    <mat-radio-group [(ngModel)]="respuestaSeleccionadas[4]" name="quest_5">
+                        <mat-radio-button value="5_resp_1">Los Angeles</mat-radio-button>
+                        <mat-radio-button value="5_resp_2">London</mat-radio-button>
+                        <mat-radio-button value="5_resp_3">NYC</mat-radio-button>
+                        <mat-radio-button value="5_resp_4">Paris</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div class="buttons-container">
+                    <button matStepperPrevious>Anterior</button>
+                    <button matStepperNext (click)="this.resultados()">Resultados</button>
+                </div>
+            </div>
+        </div>
+    </mat-step>
+    <mat-step label="Resultados">
+        <div class="body-container">
+            <div class="container-final">
+                <mat-progress-spinner mode="determinate" [value]="valueSpinner" diameter="150">
+                </mat-progress-spinner>
+                <p class="percentage">{{ valueSpinner.toPrecision(3) }}%</p>   
+                <p class="score">{{ this.correctas() }} de {{ respuestasCorrectas.length }}</p>
+                <p class="message">{{ mensaje}}</p>
+            </div>
+        </div>
+        <div class="buttons-container">
+            <button routerLink="/EnglishJourney/home">Home</button>
+        </div>
+    </mat-step>
+</form>
+</mat-stepper>

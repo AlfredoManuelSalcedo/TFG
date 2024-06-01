@@ -1,0 +1,221 @@
+<mat-stepper labelPosition="bottom" linear="false"> 
+    <form action="">
+        <mat-step label="texto 1">
+            <div class="body-container">
+            <div class="container">
+                <div class="test-container">
+                    <div class="test-question">
+                        "I have a red ball. It is big and round. <br>
+                        I like to play with it in the park.<br>
+                        Sometimes, I throw it high into the air, and it makes me happy to catch it.<br>
+                        My friends also enjoy playing with my ball."
+                    </div>
+                </div>
+                <div class="first-buttons-container">
+                    <button matStepperNext>Siguiente</button>
+                </div>
+            </div>
+        </div>
+        </mat-step>
+    <mat-step label="Pregunta 1">
+        <div class="body-container">
+        <div class="container">
+            <div class="test-container">
+                <div class="test-question">
+                    <label>Where does the person like to play with their ball?</label>
+                </div>
+                <mat-radio-group [(ngModel)]="respuestaSeleccionadas[0]" name="quest_1">
+                    <mat-radio-button value="1_resp_1">In the park</mat-radio-button>
+                    <mat-radio-button value="1_resp_2">At home</mat-radio-button>
+                    <mat-radio-button value="1_resp_3">At school</mat-radio-button>
+                    <mat-radio-button value="1_resp_4">In the street</mat-radio-button>
+                </mat-radio-group>
+            </div>
+            <div class="buttons-container">
+                <button matStepperPrevious>Anterior</button>
+                <button matStepperNext>Siguiente</button>
+            </div>
+        </div>
+    </div>
+    </mat-step>
+
+    <mat-step label="texto 2">
+        <div class="body-container">
+        <div class="container">
+            <div class="test-container">
+                <div class="test-question">
+                    "I have a black bicycle. It is fast and shiny. <br>
+                     I ride it to school every day.<br>
+                    My friends admire my bicycle.<br>
+                    It makes me feel proud."
+                </div>
+            </div>
+            <div class="buttons-container">
+                <button matStepperPrevious>Anterior</button>
+                <button matStepperNext>Siguiente</button>
+            </div>
+        </div>
+    </div>
+    </mat-step>
+
+    <mat-step label="Pregunta 2">
+        <div class="body-container">
+            <div class="container">
+                <div class="test-container">
+                    <div class="test-question">
+                        <label>What color is the bicycle?</label>
+                    </div>
+                    <mat-radio-group [(ngModel)]="respuestaSeleccionadas[1]" name="quest_2">
+                        <mat-radio-button value="2_resp_1">Red</mat-radio-button>
+                        <mat-radio-button value="2_resp_2">White</mat-radio-button>
+                        <mat-radio-button value="2_resp_3">Black</mat-radio-button>
+                        <mat-radio-button value="2_resp_4">Yellow</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div class="buttons-container">
+                    <button matStepperPrevious>Anterior</button>
+                    <button matStepperNext>Siguiente</button>
+                </div>
+            </div>
+        </div>
+    </mat-step>
+
+    <mat-step label="texto 3">
+        <div class="body-container">
+        <div class="container">
+            <div class="test-container">
+                <div class="test-question">
+                    "My cat is named Whiskers. <br>
+                    He is fluffy and white. <br>
+                    Whiskers loves to sleep on my bed. <br>
+                    Sometimes, he chases mice in the garden. <br>
+                    I enjoy cuddling with him."
+                </div>
+            </div>
+            <div class="buttons-container">
+                <button matStepperPrevious>Anterior</button>
+                <button matStepperNext>Siguiente</button>
+            </div>
+        </div>
+    </div>
+    </mat-step>
+    <mat-step label="Pregunta 3"> 
+        <div class="body-container">
+            <div class="container">
+                <div class="test-container">
+                    <div class="test-question">
+                        <label>Selecciona la opción correcta "Present simple y Continuous"</label>
+                    </div>
+                    <mat-radio-group [(ngModel)]="respuestaSeleccionadas[2]" name="quest_3">
+                        <mat-radio-button value="3_resp_1">Whiskas</mat-radio-button>
+                        <mat-radio-button value="3_resp_2">Whiskers</mat-radio-button>
+                        <mat-radio-button value="3_resp_3">Willy</mat-radio-button>
+                        <mat-radio-button value="3_resp_4">Weiss</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div class="buttons-container">
+                    <button matStepperPrevious>Anterior</button>
+                    <button matStepperNext>Siguiente</button>
+                </div>
+            </div>
+        </div>
+    </mat-step>
+
+    <mat-step label="texto 4">
+        <div class="body-container">
+        <div class="container">
+            <div class="test-container">
+                <div class="test-question">
+                    "I have a favorite book.<br>
+                     It is about a magical land.<br>
+                     I read it every night before bed.<br>
+                     The characters in the book are brave and kind.<br>
+                     I wish I could visit that magical land."
+                </div>
+            </div>
+            <div class="buttons-container">
+                <button matStepperPrevious>Anterior</button>
+                <button matStepperNext>Siguiente</button>
+            </div>
+        </div>
+    </div>
+    </mat-step>
+    <mat-step label="Pregunta 4">
+        <div class="body-container">
+            <div class="container">
+                <div class="test-container">
+                    <div class="test-question">
+                        <label>What does the person do every night before bed?</label>
+                    </div>
+                    <mat-radio-group [(ngModel)]="respuestaSeleccionadas[3]" name="quest_4">
+                        <mat-radio-button value="4_resp_1">Write</mat-radio-button>
+                        <mat-radio-button value="4_resp_2">Gaming</mat-radio-button>
+                        <mat-radio-button value="4_resp_3">Watch TV</mat-radio-button>
+                        <mat-radio-button value="4_resp_4">Read</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div class="buttons-container">
+                    <button matStepperPrevious>Anterior</button>
+                    <button matStepperNext>Siguiente</button>
+                </div>
+            </div>
+        </div>
+    </mat-step>
+
+    <mat-step label="texto 5">
+        <div class="body-container">
+        <div class="container">
+            <div class="test-container">
+                <div class="test-question">
+                    "I love to draw pictures.<br>
+                     My favorite thing to draw is a tree.<br>
+                     I use green and brown colors for the leaves and trunk.<br>
+                     Sometimes, I draw birds sitting on the branches.<br>
+                     Drawing makes me feel creative."
+                </div>
+            </div>
+            <div class="buttons-container">
+                <button matStepperPrevious>Anterior</button>
+                <button matStepperNext>Siguiente</button>
+            </div>
+        </div>
+    </div>
+    </mat-step>
+
+    <mat-step label="Pregunta 5">
+        <div class="body-container">
+            <div class="container">
+                <div class="test-container">
+                    <div class="test-question">
+                        <label>What is the person's favorite thing to draw?</label><br><br>
+                    </div>
+                    <mat-radio-group [(ngModel)]="respuestaSeleccionadas[4]" name="quest_5">
+                        <mat-radio-button value="5_resp_1">trees</mat-radio-button>
+                        <mat-radio-button value="5_resp_2">cars</mat-radio-button>
+                        <mat-radio-button value="5_resp_3">people</mat-radio-button>
+                        <mat-radio-button value="5_resp_4">cats</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div class="buttons-container">
+                    <button matStepperPrevious>Anterior</button>
+                    <button matStepperNext (click)="this.resultados()">Resultados</button>
+                </div>
+            </div>
+        </div>
+    </mat-step>
+    <mat-step label="Resultados">
+        <div class="body-container">
+            <div class="container-final">
+                <mat-progress-spinner mode="determinate" [value]="valueSpinner" diameter="150">
+                </mat-progress-spinner>
+                <p class="percentage">{{ valueSpinner.toPrecision(3) }}%</p>   
+                <p class="score">{{ this.correctas() }} de {{ respuestasCorrectas.length }}</p>
+                <p class="message">{{ mensaje}}</p>
+            </div>
+        </div>
+        <div class="buttons-container">
+            <button routerLink="/EnglishJourney/home">Home</button>
+        </div>
+    </mat-step>
+</form>
+</mat-stepper>

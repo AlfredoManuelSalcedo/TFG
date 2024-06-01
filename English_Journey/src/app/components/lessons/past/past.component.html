@@ -1,1 +1,129 @@
-<p>past works!</p>
+<mat-stepper labelPosition="bottom" linear="false"> 
+    <form action="">
+    <mat-step label="Pregunta 1">
+        <div class="body-container">
+        <div class="container">
+            <div class="test-container">
+                <div class="test-question">
+                    <label>Elije la opción correcta "Past Simple"</label>
+                    <label>We _____ to Vancouver on holiday.</label>
+                </div>
+                <mat-radio-group [(ngModel)]="respuestaSeleccionadas[0]" name="quest_1">
+                    <mat-radio-button value="1_resp_1">went</mat-radio-button>
+                    <mat-radio-button value="1_resp_2">goed</mat-radio-button>
+                    <mat-radio-button value="1_resp_3">did go</mat-radio-button>
+                    <mat-radio-button value="1_resp_4">going</mat-radio-button>
+                </mat-radio-group>
+            </div>
+            <div class="first-buttons-container">
+                <button matStepperNext>Siguiente</button>
+            </div>
+        </div>
+    </div>
+    </mat-step>
+
+    <mat-step label="Pregunta 2">
+        <div class="body-container">
+            <div class="container">
+                <div class="test-container">
+                    <div class="test-question">
+                        <label>Cual de estas frases usa el "Past Continuous" y el "Past Simple" correctamente</label>
+                    </div>
+                    <mat-radio-group [(ngModel)]="respuestaSeleccionadas[1]" name="quest_2">
+                        <mat-radio-button value="2_resp_1">They are going downstairs while i fell</mat-radio-button>
+                        <mat-radio-button value="2_resp_2">I was falling down while i was went down the stairs</mat-radio-button>
+                        <mat-radio-button value="2_resp_3">I fell down while I was going down the stairs.</mat-radio-button>
+                        <mat-radio-button value="2_resp_4">I felt down while he mock on me</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div class="buttons-container">
+                    <button matStepperPrevious>Anterior</button>
+                    <button matStepperNext>Siguiente</button>
+                </div>
+            </div>
+        </div>
+    </mat-step>
+
+    <mat-step label="Pregunta 3"> 
+        <div class="body-container">
+            <div class="container">
+                <div class="test-container">
+                    <div class="test-question">
+                        <label>Selecciona la opción correcta</label><br><br>
+                        <label>After the conference, I _____ that a man _____ the walls of the building.</label>
+                    </div>
+                    <mat-radio-group [(ngModel)]="respuestaSeleccionadas[2]" name="quest_3">
+                        <mat-radio-button value="3_resp_1">was seeing / was painting</mat-radio-button>
+                        <mat-radio-button value="3_resp_2">saw / was paiting</mat-radio-button>
+                        <mat-radio-button value="3_resp_3">was seeing / painted</mat-radio-button>
+                        <mat-radio-button value="3_resp_4">see/paint</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div class="buttons-container">
+                    <button matStepperPrevious>Anterior</button>
+                    <button matStepperNext>Siguiente</button>
+                </div>
+            </div>
+        </div>
+    </mat-step>
+
+    <mat-step label="Pregunta 4">
+        <div class="body-container">
+            <div class="container">
+                <div class="test-container">
+                    <div class="test-question">
+                        <label>Cual oración en pasado, esta correcta</label>
+                    </div>
+                    <mat-radio-group [(ngModel)]="respuestaSeleccionadas[3]" name="quest_4">
+                        <mat-radio-button value="4_resp_1">He is smile all the time, but he also was looking nervous.</mat-radio-button>
+                        <mat-radio-button value="4_resp_2">We got out of the car, and he kneeled in front of me</mat-radio-button>
+                        <mat-radio-button value="4_resp_3">When I was getting off the train, he running up to me</mat-radio-button>
+                        <mat-radio-button value="4_resp_4">When I arrived at the station, Raimond was waiting for me.</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div class="buttons-container">
+                    <button matStepperPrevious>Anterior</button>
+                    <button matStepperNext>Siguiente</button>
+                </div>
+            </div>
+        </div>
+    </mat-step>
+
+    <mat-step label="Pregunta 5">
+        <div class="body-container">
+            <div class="container">
+                <div class="test-container">
+                    <div class="test-question">
+                        <label>Rellena el hueco "Present Perfect"</label><br><br>
+                        <label>As soon as we walked into the room, we _____ a noise. Someone ______ my computer.</label>
+                    </div>
+                    <mat-radio-group [(ngModel)]="respuestaSeleccionadas[4]" name="quest_5">
+                        <mat-radio-button value="5_resp_1">heard / was using</mat-radio-button>
+                        <mat-radio-button value="5_resp_2">were hearing / used</mat-radio-button>
+                        <mat-radio-button value="5_resp_3">were hearing / used</mat-radio-button>
+                        <mat-radio-button value="5_resp_4">hearinf/ was using</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div class="buttons-container">
+                    <button matStepperPrevious>Anterior</button>
+                    <button matStepperNext (click)="this.resultados()">Resultados</button>
+                </div>
+            </div>
+        </div>
+    </mat-step>
+    <mat-step label="Resultados">
+        <div class="body-container">
+            <div class="container-final">
+                <mat-progress-spinner mode="determinate" [value]="valueSpinner" diameter="150">
+                </mat-progress-spinner>
+                <p class="percentage">{{ valueSpinner.toPrecision(3) }}%</p>   
+                <p class="score">{{ this.correctas() }} de {{ respuestasCorrectas.length }}</p>
+                <p class="message">{{ mensaje}}</p>
+            </div>
+        </div>
+        <div class="buttons-container">
+            <button routerLink="/EnglishJourney/home">Home</button>
+        </div>
+    </mat-step>
+</form>
+</mat-stepper>

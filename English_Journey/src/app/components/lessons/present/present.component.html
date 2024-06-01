@@ -7,8 +7,8 @@
                 <div class="test-question">
                     <label>¿Cuál de estas opciones se encuentra en "Present Simple"?</label>
                 </div>
-                <mat-radio-group>
-                    <mat-radio-button value="1_resp_1">I don't drink tea.</mat-radio-button>
+                <mat-radio-group [(ngModel)]="respuestaSeleccionadas[0]" name="quest_1">
+                    <mat-radio-button value="1_resp_1">I don't drink tea</mat-radio-button>
                     <mat-radio-button value="1_resp_2">I drink not tea</mat-radio-button>
                     <mat-radio-button value="1_resp_3">I drinkon't tea</mat-radio-button>
                     <mat-radio-button value="1_resp_4">I not drink tea</mat-radio-button>
@@ -28,10 +28,10 @@
                     <div class="test-question">
                         <label>Cual de estas frases usa el "Present Continuous"</label>
                     </div>
-                    <mat-radio-group>
-                        <mat-radio-button value="2_resp_1">They are go to the cinema.</mat-radio-button>
+                    <mat-radio-group [(ngModel)]="respuestaSeleccionadas[1]" name="quest_2">
+                        <mat-radio-button value="2_resp_1">They are go to the cinema</mat-radio-button>
                         <mat-radio-button value="2_resp_2">They going to the cinema</mat-radio-button>
-                        <mat-radio-button value="2_resp_3">They are going to the cinema.</mat-radio-button>
+                        <mat-radio-button value="2_resp_3">They are going to the cinema</mat-radio-button>
                         <mat-radio-button value="2_resp_4">They is going to the cinema</mat-radio-button>
                     </mat-radio-group>
                 </div>
@@ -50,9 +50,9 @@
                     <div class="test-question">
                         <label>Selecciona la opción correcta "Present simple y Continuous"</label>
                     </div>
-                    <mat-radio-group>
-                        <mat-radio-button value="3_resp_1">While she is cook dinner, her husband reads the newspaper.</mat-radio-button>
-                        <mat-radio-button value="3_resp_2">While she is cooking dinner, her husband is reading the newspaper.</mat-radio-button>
+                    <mat-radio-group [(ngModel)]="respuestaSeleccionadas[2]" name="quest_3">
+                        <mat-radio-button value="3_resp_1">While she is cook dinner, her husband reads the newspaper</mat-radio-button>
+                        <mat-radio-button value="3_resp_2">While she is cooking dinner, her husband is reading the newspaper</mat-radio-button>
                         <mat-radio-button value="3_resp_3">While she cooks dinner, her husband is read the newspaper</mat-radio-button>
                         <mat-radio-button value="3_resp_4">While she is cooking dinner, her husband read the newspaper</mat-radio-button>
                     </mat-radio-group>
@@ -72,11 +72,11 @@
                     <div class="test-question">
                         <label>Selecciona la opción correcta "Present Perfect"</label>
                     </div>
-                    <mat-radio-group>
+                    <mat-radio-group [(ngModel)]="respuestaSeleccionadas[3]" name="quest_4">
                         <mat-radio-button value="4_resp_1">He has been go to Paris last year</mat-radio-button>
                         <mat-radio-button value="4_resp_2">He has went to Paris last year</mat-radio-button>
                         <mat-radio-button value="4_resp_3">He goes to Paris last year</mat-radio-button>
-                        <mat-radio-button value="4_resp_4">He has been to Paris sometimes.</mat-radio-button>
+                        <mat-radio-button value="4_resp_4">He has been to Paris sometimes</mat-radio-button>
                     </mat-radio-group>
                 </div>
                 <div class="buttons-container">
@@ -95,8 +95,8 @@
                         <label>Rellena el hueco "Present Perfect"</label><br><br>
                         <label>She ________ her keys.</label>
                     </div>
-                    <mat-radio-group>
-                        <mat-radio-button value="5_resp_1">has lost.</mat-radio-button>
+                    <mat-radio-group [(ngModel)]="respuestaSeleccionadas[4]" name="quest_5">
+                        <mat-radio-button value="5_resp_1">has lost</mat-radio-button>
                         <mat-radio-button value="5_resp_2">lose</mat-radio-button>
                         <mat-radio-button value="5_resp_3">lost</mat-radio-button>
                         <mat-radio-button value="5_resp_4">have lost</mat-radio-button>
@@ -104,16 +104,23 @@
                 </div>
                 <div class="buttons-container">
                     <button matStepperPrevious>Anterior</button>
-                    <button matStepperNext>Resultados</button>
+                    <button matStepperNext (click)="this.resultados()">Resultados</button>
                 </div>
             </div>
         </div>
     </mat-step>
     <mat-step label="Resultados">
-
+        <div class="body-container">
+            <div class="container-final">
+                <mat-progress-spinner mode="determinate" [value]="valueSpinner" diameter="150">
+                </mat-progress-spinner>
+                <p class="percentage">{{ valueSpinner.toPrecision(3) }}%</p>   
+                <p class="score">{{ this.correctas() }} de {{ respuestasCorrectas.length }}</p>
+                <p class="message">{{ mensaje}}</p>
+            </div>
+        </div>
         <div class="buttons-container">
-            <button matStepperPrevious>Anterior</button>
-            <button routerLink="/EnglishJourney/home">Resultados</button>
+            <button routerLink="/EnglishJourney/home">Home</button>
         </div>
     </mat-step>
 </form>
