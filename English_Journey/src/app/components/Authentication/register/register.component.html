@@ -1,36 +1,55 @@
-
-    <div class="form-login">
-        <div class="titulo-login">
-            <p>Registro</p>
-        </div><br>
-        <form (submit)="registro()" method="post" [formGroup]="registerform">
-            <mat-form-field class="input-width">
-                <mat-label>Nombre</mat-label>
-                <input type="text" matInput [formControl]="registerform.controls.nombre" [errorStateMatcher]="matcher"placeholder="Su nombre..." class="matInputSmall">
-                @if (registerform.controls.nombre.hasError('required')) {
-                    <mat-error>El nombre es <strong>obligatorio</strong></mat-error>
-                }
-            </mat-form-field>
-            <mat-form-field class="input-width">
-                <mat-label>Email</mat-label>
-                <input type="email" matInput [formControl]="registerform.controls.mail" [errorStateMatcher]="matcher"placeholder="Ex. pat@example.com" class="matInputSmall">
-                @if (registerform.controls.mail.hasError('email')) {
-                    <mat-error>Porfavor introduce un email válido</mat-error>
-                  }
-                @if (registerform.controls.password.hasError('required')) {
-                    <mat-error>El correo es <strong>obligatorio</strong></mat-error>
-                }
-            </mat-form-field>
-            <mat-form-field class="input-width">
-                <mat-label>Contraseña</mat-label>
-                <input type="password" matInput [formControl]="registerform.controls.password"  [errorStateMatcher]="matcher" placeholder="Ingrese su Contraseña...">
-                @if(passwordFormControl.hasError('password')){
-                    <mat-error>La contraseña no es válida</mat-error>
-                }
-                @if(passwordFormControl.hasError('required')){
-                    <mat-error>La contraseña es <strong>requerida</strong></mat-error>
-                }
-            </mat-form-field>
-            <button class="boton-login" [disabled]="!registerform.valid" >ACCEDER</button><br>
-        </form>
-    </div>
+<div class="form-login">
+  <div class="titulo-login">
+    <p>Registro</p>
+  </div>
+  <br />
+  <form (submit)="registro()" method="post" [formGroup]="registerform">
+    <mat-form-field class="input-width">
+      <mat-label>Nombre</mat-label>
+      <input
+        type="text"
+        matInput
+        [formControl]="registerform.controls.nombre"
+        [errorStateMatcher]="matcher"
+        placeholder="Su nombre..."
+        class="matInputSmall"
+      />
+      @if (registerform.controls.nombre.hasError('required')) {
+      <mat-error>El nombre es <strong>obligatorio</strong></mat-error>
+      }
+    </mat-form-field>
+    <mat-form-field class="input-width">
+      <mat-label>Email</mat-label>
+      <input
+        type="email"
+        matInput
+        [formControl]="registerform.controls.mail"
+        [errorStateMatcher]="matcher"
+        placeholder="Ex. pat@example.com"
+        class="matInputSmall"
+      />
+      @if (registerform.controls.mail.hasError('email')) {
+      <mat-error>Porfavor introduce un email válido</mat-error>
+      } @if (registerform.controls.password.hasError('required')) {
+      <mat-error>El correo es <strong>obligatorio</strong></mat-error>
+      }
+    </mat-form-field>
+    <mat-form-field class="input-width">
+      <mat-label>Contraseña</mat-label>
+      <input
+        type="password"
+        matInput
+        [formControl]="registerform.controls.password"
+        [errorStateMatcher]="matcher"
+        placeholder="Ingrese su Contraseña..."
+      />
+      @if(passwordFormControl.hasError('password')){
+      <mat-error>La contraseña no es válida</mat-error>
+      } @if(passwordFormControl.hasError('required')){
+      <mat-error>La contraseña es <strong>requerida</strong></mat-error>
+      }
+    </mat-form-field>
+    <button class="boton-login" [disabled]="!registerform.valid">ACCEDER</button
+    ><br />
+  </form>
+</div>

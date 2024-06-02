@@ -1,17 +1,23 @@
-<div>
+<div class="formulario-estilo">
+  <div>
     <label>Nombre:</label>
-    <input type="text" [(ngModel)]="this.user.nombre" name="nombre">
-</div>
-<div>
+    <input type="text" [(ngModel)]="this.user.nombre" name="nombre" />
+  </div>
+  <div>
     <label>Correo:</label>
-    <input type="email" [(ngModel)]="this.user.correo" name="correo">
-</div>
-<div>
+    <input type="email" [(ngModel)]="this.user.correo" name="correo" />
+  </div>
+  <div>
     <label>Contraseña:</label>
-    <input type="password" [(ngModel)]="this.user.contrasena" name="contrasena">
-</div>
-<div>
+    <input
+      type="password"
+      [(ngModel)]="this.user.contrasena"
+      name="contrasena"
+    />
+  </div>
+  <div>
     <label>Admin:</label>
-    <input type="checkbox" [(ngModel)]="this.user.admin" name="admin">
+    <input type="checkbox" [(ngModel)]="this.user.admin" name="admin" />
+  </div>
+  <button (click)="actualizarUsuario()">Actualizar</button>
 </div>
-<button (click)="actualizarUsuario()">Actualizar</button>

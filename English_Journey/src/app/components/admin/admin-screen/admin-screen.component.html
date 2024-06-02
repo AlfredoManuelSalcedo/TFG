@@ -1,25 +1,29 @@
 <table class="styled-table">
-    <thead>
-      <tr>
-        <th>User ID</th>
-        <th>Nombre</th>
-        <th>Correo</th>
-        <th>Contraseña</th>
-        <th>Admin</th>
-        <th>Acciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let user of users">
-        <td>{{ user.user_id }}</td>
-        <td>{{ user.nombre }}</td>
-        <td>{{ user.correo }}</td>
-        <td>{{ user.contrasena }}</td>
-        <td>{{ user.admin }}</td>
-        <td>
-          <button (click)="borrarUsuario(user.user_id)">Borrar</button>
-          <button (click)="abrirFormularioActualizar(user)">Actualizar</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <thead>
+    <tr>
+      <th>User ID</th>
+      <th>Nombre</th>
+      <th>Correo</th>
+      <th>Contraseña</th>
+      <th>Admin</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.user_id }}</td>
+      <td>{{ user.nombre }}</td>
+      <td>{{ user.correo }}</td>
+      <td>{{ user.contrasena }}</td>
+      <td>{{ user.admin }}</td>
+      <td>
+        <button class="borrar" (click)="borrarUsuario(user.user_id)">
+          Borrar
+        </button>
+        <button class="update" (click)="abrirFormularioActualizar(user)">
+          Actualizar
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

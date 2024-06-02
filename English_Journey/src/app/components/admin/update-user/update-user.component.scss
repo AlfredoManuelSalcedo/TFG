@@ -1,0 +1,55 @@
+.formulario-estilo {
+  background-color: #1d7ca8;
+  width: 300px;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px auto;
+  text-align: center;
+  box-shadow: -2px 12px 18px 4px rgba(0, 0, 0, 0.75);
+}
+
+.formulario-estilo label {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+.formulario-estilo input[type="text"],
+.formulario-estilo input[type="email"],
+.formulario-estilo input[type="password"],
+.formulario-estilo input[type="checkbox"] {
+  width: calc(100% - 20px);
+  padding: 8px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: none;
+}
+
+.formulario-estilo input[type="checkbox"] {
+  width: auto;
+}
+
+.formulario-estilo button {
+  text-decoration: none;
+  text-align: center;
+  padding: 11px 32px;
+  border: solid 1px #fad367;
+  font-weight: bold;
+  color: #000000;
+  background-color: #f7d3a3;
+  border-radius: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.formulario-estilo button:hover {
+  background-color: #fab356;
+}
+
+.formulario-estilo button:disabled {
+  border: solid 1px #666151fd;
+  background-color: #c9b393;
+  color: rgba(90, 85, 85, 0.644);
+}

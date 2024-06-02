@@ -9,9 +9,9 @@ import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-home-container',
   standalone: true,
-  imports: [CommonModule,RouterModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './home-container.component.html',
-  styleUrls: ['./home-container.component.scss']
+  styleUrls: ['./home-container.component.scss'],
 })
 export class HomeContainerComponent implements OnInit {
   nombre = '';
@@ -29,12 +29,14 @@ export class HomeContainerComponent implements OnInit {
     if (userData) {
       this.nombre = userData.data.nombre;
     }
-    this.conexion.getLessonsTypes().subscribe(tipos => {
+    this.conexion.getLessonsTypes().subscribe((tipos) => {
       this.tipos = tipos;
-      this.tipos.forEach(tipo => {
-        this.conexion.getLessonsByType(tipo.tipo_curso).subscribe(lecciones => {
-          tipo.lecciones = lecciones;
-        });
+      this.tipos.forEach((tipo) => {
+        this.conexion
+          .getLessonsByType(tipo.tipo_curso)
+          .subscribe((lecciones) => {
+            tipo.lecciones = lecciones;
+          });
       });
     });
   }
@@ -64,13 +66,12 @@ export class HomeContainerComponent implements OnInit {
     return index < 4 ? colors[index] : '';
   }
 }
-  
-  // getLessons():Lesson[]{
-  //   let AsigaturesList : Lesson[]=[] 
-  //   this.appService.getLessonsContent().subscribe(data=>{
-  //     data.lessons.forEach(type => {AsigaturesList.push(type)})
-  //   })
-  //   console.log(AsigaturesList)
-  //   return AsigaturesList;
-  // }
 
+// getLessons():Lesson[]{
+//   let AsigaturesList : Lesson[]=[]
+//   this.appService.getLessonsContent().subscribe(data=>{
+//     data.lessons.forEach(type => {AsigaturesList.push(type)})
+//   })
+//   console.log(AsigaturesList)
+//   return AsigaturesList;
+// }
