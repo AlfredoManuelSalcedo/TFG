@@ -43,7 +43,7 @@ router.put('/datos/:id', (req, res) => {
 
 router.get('/usuario/:id', (req, res) => {
     const userId = req.params.id;
-    const query = 'SELECT * FROM usuarios WHERE user_id = ?'; // Ajusta esta consulta según tu necesidad
+    const query = 'SELECT * FROM usuarios WHERE user_id = ?';
     connection.query(query, [userId], (err, results) => {
         if (err) {
             console.error('Error ejecutando la consulta:', err);
