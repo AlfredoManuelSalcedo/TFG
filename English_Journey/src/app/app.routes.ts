@@ -19,12 +19,16 @@ import { RIntermediateComponent } from './components/lessons/rintermediate/rinte
 import { RAdvancedComponent } from './components/lessons/radvanced/radvanced.component';
 import { RFastComponent } from './components/lessons/rfast/rfast.component';
 import { AboutmeComponent } from './components/aboutme/aboutme.component';
+import { AdminLoginComponent } from './components/Authentication/admin-login/admin-login.component';
+import { AdminScreenComponent } from './components/admin/admin-screen/admin-screen.component';
+import { UpdateUserComponent } from './components/admin/update-user/update-user.component';
 
 export const routes: Routes = [
     {path: "auth",
     children:[
         {path: "login", component: LoginComponent},
         {path: "register", component:RegisterComponent},
+        {path: "admin", component:AdminLoginComponent},
         {path: '', redirectTo:"login", pathMatch:"full"}
     ], component:AutheticationScreenComponent
     },
@@ -45,6 +49,8 @@ export const routes: Routes = [
         {path:"r_conversational", component:RFastComponent},
         {path:"about_me", component:AboutmeComponent},
         {path:"home", component:HomeContainerComponent},
+        {path:"admin", component:AdminScreenComponent},
+        {path:"updateUser", component:UpdateUserComponent},
         {path: '', redirectTo:"/home", pathMatch:"full"}
     ], component:HomeScreenComponent
     }
