@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const connection = require('../config/database');
 
-// Ruta para obtener todos los datos
 router.get('/datos', (req, res) => {
     const query = 'SELECT user_id, nombre, correo, contraseña AS contrasena, admin FROM usuarios';
     connection.query(query, (err, results) => {
@@ -42,7 +41,6 @@ router.put('/datos/:id', (req, res) => {
     });
 });
 
-// Ruta para obtener un usuario específico por ID
 router.get('/usuario/:id', (req, res) => {
     const userId = req.params.id;
     const query = 'SELECT * FROM usuarios WHERE user_id = ?'; // Ajusta esta consulta según tu necesidad
