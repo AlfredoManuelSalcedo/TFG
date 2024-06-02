@@ -22,6 +22,10 @@ import { AboutmeComponent } from './components/aboutme/aboutme.component';
 import { AdminLoginComponent } from './components/Authentication/admin-login/admin-login.component';
 import { AdminScreenComponent } from './components/admin/admin-screen/admin-screen.component';
 import { UpdateUserComponent } from './components/admin/update-user/update-user.component';
+import { PresentReviewComponent } from './components/review/present/present.component';
+import { PastReviewComponent } from './components/review/past/past.component';
+import { FutureReviewComponent } from './components/review/future/future.component';
+import { ConditionalsReviewComponent } from './components/review/conditionals/conditionals.component';
 
 export const routes: Routes = [
     {path: "auth",
@@ -51,6 +55,10 @@ export const routes: Routes = [
         {path:"home", component:HomeContainerComponent},
         {path:"admin", component:AdminScreenComponent},
         {path:"updateUser", component:UpdateUserComponent},
+        {path:"present", component:PresentReviewComponent},
+        {path:"past", component:PastReviewComponent},
+        {path:"future", component:FutureReviewComponent},
+        {path:"conditionals", component:ConditionalsReviewComponent},
         {path: '', redirectTo:"/home", pathMatch:"full"}
     ], component:HomeScreenComponent
     }

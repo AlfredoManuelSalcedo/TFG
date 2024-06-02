@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Grammar, Lesson } from '../../../models/lessons-estructure';
-import { LoginService } from '../../../services/login.service';
 import { UserDataService } from '../../../services/user-data.service';
 import { Router } from '@angular/router';
 import { ConexionService } from '../../../services/API/conexion.service';
@@ -20,7 +19,6 @@ export class HomeContainerComponent implements OnInit {
   activeLesson: any = null;
 
   constructor(
-    private appService: LoginService,
     private userDataService: UserDataService,
     private router: Router,
     private conexion: ConexionService

@@ -1,0 +1,30 @@
+.body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+h1, h2, h3 {
+    color: #1e90ff;
+}
+h1 {
+    text-align: center;
+}
+.container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+.tense-section {
+    margin-bottom: 40px;
+}
+.example {
+    background-color: #e6f2ff;
+    border-left: 4px solid #1e90ff;
+    padding: 10px;
+    margin: 10px 0;
+}
