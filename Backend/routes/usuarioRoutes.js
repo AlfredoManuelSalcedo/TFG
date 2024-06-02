@@ -64,7 +64,7 @@ router.get('/register/:datos', (req, res) => {
     const name = datos.nombre;
     const passw = datos.password;
     const query = 'SELECT * FROM usuarios WHERE correo = ?';
-    const queryInsert = 'INSERT INTO usuarios VALUES (?, ?, ?, ?)';
+    const queryInsert = 'INSERT INTO usuarios VALUES (?, ?, ?, ?, ?)';
     
     connection.query(query, [mail], (err, results) => {
         if (err) {
@@ -74,7 +74,7 @@ router.get('/register/:datos', (req, res) => {
         }
         
         if (results.length === 0) {
-            connection.query(queryInsert, [null, name, mail, passw], (err, results) => {
+            connection.query(queryInsert, [null, name, mail, passw,0], (err, results) => {
                 if (err) {
                     console.error('Error ejecutando la consulta:', err);
                     res.status(500).json({ success: false, message: 'Error ejecutando la consulta', error: err,status:500 });

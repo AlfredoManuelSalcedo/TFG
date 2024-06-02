@@ -3,11 +3,12 @@ import { ConexionService } from '../../../services/API/conexion.service';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { UpdateService } from '../../../services/update.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-admin-screen',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './admin-screen.component.html',
   styleUrls: ['./admin-screen.component.scss'] 
 })
