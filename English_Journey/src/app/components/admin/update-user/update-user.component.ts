@@ -18,7 +18,6 @@ export class UpdateUserComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = this.updateS.getUserSeleccionado();
-    console.log(this.user)
   }
 
   actualizarUsuario(): void {
